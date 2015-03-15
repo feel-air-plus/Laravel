@@ -12,7 +12,7 @@
 */
 
 // Route::get('/', 'WelcomeController@index');
-Route::get('/', 'LoginController@index');
+Route::get('/', 'Login\LoginController@index');
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
@@ -21,7 +21,7 @@ Route::controllers([
 	'otoiawase' => 'OtoiawaseController',
 
 	//Social Login Controllers
-    'github' => 'GithubController',
-    'facebook' => 'FacebookController',
-    'twitter' => 'TwitterController',
+    'github' => 'Login\GithubController',
+    'facebook' => 'Login\FacebookController',
+    'twitter' => 'Login\TwitterController',
 ]);

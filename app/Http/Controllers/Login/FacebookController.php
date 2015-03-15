@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Login;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -14,17 +14,17 @@ class FacebookController extends Controller {
      * @var Socialite
      */
     protected $socialite;
- 
+
     public function __construct(Socialite $socialite)
     {
         $this->socialite = $socialite;
     }
- 
+
     public function getLogin()
     {
         return $this->socialite->driver('facebook')->redirect();
     }
- 
+
     public function getCallback()
     {
     	//ユーザ情報の取得
