@@ -9,18 +9,21 @@
 	<div class="panel-heading back_img" style="height:25px;">&nbsp;</div>
 	<div class="panel-body form_body">
 		<h2>Contact</h2>
+		@foreach($errors->all() as $error)
+		<li>{{$error}}</li>
+		@endforeach
 		{!! Form::open(['action' => ['OtoiawaseController@postConfirm'],'class'=>'form-horizontal']) !!}
 			<div class="col-md-5">
 				<div class="form-group">
 					{!! Form::label('input-name','Name:',array('class'=>'col-sm-2 control-label')) !!}
 					<div class="col-sm-5">
-						{!! Form::text('name','',array('class'=>'form-control','id'=>'input-name','placeholder'=>'お名前','required'=>'required')) !!}
+						{!! Form::text('name','',array('class'=>'form-control','id'=>'input-name','placeholder'=>'お名前')) !!}
 					</div>
 				</div>
 				<div class="form-group">
 					{!! Form::label('input-mail','E-mail:',array('class'=>'col-sm-2 control-label')) !!}
 					<div class="col-sm-10">
-						{!! Form::email('email','',array('class'=>'form-control','id'=>'input-mail','placeholder'=>'メールアドレス','required'=>'required')) !!}
+						{!! Form::text('email','',array('class'=>'form-control','id'=>'input-mail','placeholder'=>'メールアドレス')) !!}
 					</div>
 				</div>
 			</div>
@@ -34,7 +37,7 @@
 				<div class="form-group">
 					{!! Form::label('input-contact','Contact:',array('class'=>'col-sm-2 control-label')) !!}
 					<div class="col-sm-10">
-						{!! Form::textarea('body','',array('class'=>'form-control','rows'=>'5','required'=>'required','id'=>'input-contact')) !!}
+						{!! Form::textarea('body','',array('class'=>'form-control','rows'=>'5','id'=>'input-contact')) !!}
 					</div>
 				</div>
 				<div class="form-group">

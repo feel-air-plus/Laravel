@@ -39,7 +39,7 @@ class OtoiawaseController extends BaseController {
 	 * @param Requests $request Form送信時のリクエストがオブジェクトでRequestクラスに保持されている
 	 * @return view
 	 */
-	public function postConfirm(Request $request)
+	public function postConfirm(Requests\OtoiawaseRequest $request)
 	{
 		//バリデーションの実行
 
@@ -88,8 +88,8 @@ class OtoiawaseController extends BaseController {
 			//メールを送信
 			Mail::queue( 'emails.otoiawase', $data, function ($e)
 			{
-				$e->to(\Config::get('const.MAIL_OTOIAWASE'), '')
-				->from(\Config::get('const.MAIL_OTOIAWASE'), \Config::get('const.MAIL_OTOIAWASE'))
+				$e->to(getenv("MAIL_ADDRESS"), '')
+				->from(getenv("MAIL_ADDRESS"), getenv("MAIL_ADDRESS"))
 				->subject('お問い合わせ');
 			});
 		}

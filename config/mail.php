@@ -29,7 +29,7 @@ return [
 	*/
 
 	//'host' => 'smtp.mailgun.org',
-	'host' => '',
+	'host' => getenv("MAIL_SMTP"),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
 	*/
 
 	//'from' => ['address' => null, 'name' => null],
-	'from' => ['address' => '', 'name' => null],
+	'from' => ['address' => getenv("MAIL_ADDRESS"), 'name' => null],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
 	*/
 
 	//'username' => null,
-	'username' => '',
+	'username' => getenv("MAIL_ADDRESS"),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -97,7 +97,7 @@ return [
 	*/
 
 	//'password' => null,
-	'password' => '',
+	'password' => getenv("MAIL_PASSWORD"),
 
 	/*
 	|--------------------------------------------------------------------------
